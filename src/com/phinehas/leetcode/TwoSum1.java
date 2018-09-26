@@ -28,9 +28,10 @@ public class TwoSum1 {
 			map.put(nums[i],i);
 		}
 		for (int i = 0; i < nums.length; i++) {
-			if(map.containsKey(target - nums[i])){
+			int key = target - nums[i];
+			if(map.containsKey(key)){
+				y = map.get(key);
 				x = i;
-				y = map.get(target - nums[i]);
 				if(y != i){ break;}
 			}
 		}
