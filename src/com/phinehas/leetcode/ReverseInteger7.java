@@ -12,7 +12,7 @@ public class ReverseInteger7 {
 	输出: 21
 	 */
 	public static void main(String[] args) {
-		int x = 120;
+		int x = 901000;
 		System.out.println(reverse(x));
 	}
 
@@ -25,11 +25,16 @@ public class ReverseInteger7 {
 		if(s.charAt(0) == '-'){
 			sb.append("-");
 		}
+		boolean zero = true;
 		char[] chars = String.valueOf(x).toCharArray();
 		for (int i = chars.length - 1; i >= 0; i--) {
-			if(chars[i] == '0' || chars[i] == '-'){
+			if(chars[i] == '-'){
 				continue;
 			}
+			if(zero && chars[i] == '0'){
+				continue;
+			}
+			zero = false;
 			sb.append(chars[i]);
 		}
 		Long i = Long.valueOf(sb.toString());
