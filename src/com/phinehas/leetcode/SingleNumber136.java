@@ -21,17 +21,12 @@ public class SingleNumber136 {
 		System.out.println(singleNumber(nums));
 	}
 
-	//TODO
 	public static int singleNumber(int[] nums) {
-		int sum = 0;
+		int c = 0;
 		for (int i = 0; i < nums.length; i++) {
-			sum += nums[i];
+			c = c ^ nums[i];
 		}
-		for (int i = 0; i < nums.length; i++) {
-			if( (sum - nums[i])%2 == 0){
-				return nums[i];
-			}
-		}
-		return -1;
+
+		return c;
 	}
 }
